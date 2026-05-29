@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Napas Kecil Zayn - Berbuatbaik</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS PREMIUM CLEAN WHITE - 100% IDENTIK DENGAN SCREENSHOT ASLI */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #f4f5f7;
+            color: #1a202c;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 450px;
+            background-color: #ffffff;
+            min-height: 100vh;
+            position: relative;
+            padding-bottom: 90px; /* Jarak aman tombol melayang bawah */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Banner Gambar Atas Penuh */
+        .banner-cover {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .main-content {
+            padding: 20px 16px;
+        }
+
+        /* Judul Utama */
+        .campaign-headline {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #004d61;
+            line-height: 1.4;
+            margin-bottom: 18px;
+        }
+
+        /* BOX PROGRESS BAR DONASI */
+        .progress-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .progress-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+
+        .money-accumulated {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #004d61;
+        }
+
+        .days-left {
+            font-size: 0.85rem;
+            color: #718096;
+            font-weight: 500;
+        }
+
+        .bar-bg {
+            width: 100%;
+            height: 8px;
+            background-color: #edf2f7;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .bar-fill {
+            width: 65%; /* Persentase progres donasi */
+            height: 100%;
+            background-color: #008080;
+            border-radius: 10px;
+        }
+
+        .target-text {
+            font-size: 0.8rem;
+            color: #718096;
+            border-bottom: 3px solid #008080;
+            padding-bottom: 6px;
+            display: inline-block;
+            width: 100%;
+        }
+
+        /* DESAIN FORM INPUT */
+        .form-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 14px;
+            margin-bottom: 6px;
+        }
+
+        .form-input {
+            width: 100%;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 0.95rem;
+            color: #1a202c;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus {
+            border-color: #0056b3;
+        }
+
+        /* LIST DONATUR LIVE */
+        .donatur-section-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-top: 22px;
+            margin-bottom: 12px;
+        }
+
+        .donatur-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 10px;
+        }
+
+        .avatar-circle {
+            width: 42px;
+            height: 42px;
+            background-color: #cbd5e0;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #718096;
+            font-size: 1.2rem;
+        }
+
+        .donatur-info {
+            flex: 1;
+        }
+
+        .donatur-name {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #2d3748;
+        }
+
+        .donatur-time {
+            font-size: 0.75rem;
+            color: #a0aec0;
+            margin-bottom: 2px;
+        }
+
+        .donatur-value {
+            font-size: 0.85rem;
+            color: #2d3748;
+            font-weight: 500;
+        }
+
+        .btn-see-more {
+            width: 100%;
+            background: #ffffff;
+            border: 1px solid #cbd5e0;
+            color: #4a5568;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* PENGENDALIAN ALUR HALAMAN (STEP CONTROLLER) */
+        .page-step {
+            display: none;
+        }
+
+        .page-step.active {
+            display: block;
+        }
+
+        /* DESAIN KOTAK QRIS HALAMAN 2 */
+        .qris-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 24px 16px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .btn-copy-action {
+            background-color: rgba(0, 86, 179, 0.08);
+            color: #0056b3;
+            border: 1px solid rgba(0, 86, 179, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 18px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .qris-image-frame {
+            background: #ffffff;
+            padding: 10px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 18px;
+        }
+
+        .qris-image-frame img {
+            width: 210px;
+            height: 210px;
+            display: block;
+            object-fit: contain;
+        }
+
+        .total-box-render {
+            background-color: #f7fafc;
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .total-box-render span {
+            font-size: 0.75rem;
+            color: #718096;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .total-box-render h2 {
+            color: #38a169;
+            font-size: 1.6rem;
+            margin-top: 4px;
+            font-weight: 700;
+        }
+
+        /* FIXED STICKY ACTION BOTTOM BAR (SAMA SEPERTI ASLI) */
+        .bottom-action-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            max-width: 450px;
+            background-color: #fff1f2; /* Warna soft merah muda khas asli bawah */
+            border-top: 1px solid #fbd5d5;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 999;
+        }
+
+        .btn-side-share-icon {
+            width: 50px;
+            height: 44px;
+            background-color: #edf2f7;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            color: #4a5568;
+            font-size: 1.05rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .btn-main-submit {
+            flex: 1;
+            background-color: #004d61;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 13px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-main-submit.green-state {
+            background-color: #38a169;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <img src="827.jpg" alt="Campaign Cover" class="banner-cover">
+
+        <div class="main-content">
+            
+            <div id="step-panel-1" class="page-step active">
+                <h1 class="campaign-headline">Sering Kejang dan Gagal Napas, Zayn Bertahan dengan Gangguan Otak Lissencephaly</h1>
+                
+                <div class="progress-card">
+                    <div class="progress-flex">
+                        <span class="money-accumulated">Rp 19.755.500</span>
+                        <span class="days-left">11 Hari lagi</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill"></div>
+                    </div>
+                    <span class="target-text">Terkumpul dari Rp 30.000.000,-</span>
+                </div>
+
+                <label class="form-label">Nama</label>
+                <input type="text" id="input-nama" class="form-input" placeholder="Rehan">
+
+                <label class="form-label">Email</label>
+                <input type="email" id="input-email" class="form-input" placeholder="tiamoasl9@gmail.com">
+
+                <label class="form-label">Nomor WhatsApp</label>
+                <input type="tel" id="input-wa" class="form-input" placeholder="08123456789">
+
+                <label class="form-label">Nominal Donasi (Rp)</label>
+                <input type="number" id="input-nominal" class="form-input" placeholder="100000">
+
+                <label class="form-label">Pesan/Doa</label>
+                <input type="text" id="input-doa" class="form-input" placeholder="Tulis doa tulus Anda di sini...">
+
+                <div class="donatur-section-title">Donatur (100)</div>
+                
+                <div class="donatur-row">
+                    <div class="avatar-circle"><i class="fas fa-user"></i></div>
+                    <div class="donatur-info">
+                        <div class="donatur-name">D********* T</div>
+                        <div class="donatur-time">5 jam yang lalu</div>
+                        <div class="donatur-value">Donasi <strong>Rp 5.000</strong></div>
+                    </div>
+                </div>
+
+                <div class="donatur-row">
+                    <div class="avatar-circle"><i class="fas fa-user"></i></div>
+                    <div class="donatur-info">
+                        <div class="donatur-name">Hamba Allah</div>
+                        <div class="donatur-time">9 jam yang lalu</div>
+                        <div class="donatur-value">Donasi <strong>Rp 1.000.000</strong></div>
+                    </div>
+                </div>
+
+                <button class="btn-see-more">Lihat Lebih Banyak</button>
+            </div>
+
+            <div id="step-panel-2" class="page-step">
+                <div class="qris-card">
+                    <h3 style="color:#004d61; font-size:1.1rem; margin-bottom: 6px; font-weight:700;">Pembayaran QRIS Resmi</h3>
+                    <p style="font-size:0.8rem; color:#718096; margin-bottom:15px;">Silakan screenshot QRIS di bawah ini lalu bayar lewat M-Banking/E-Wallet</p>
+                    
+                    <button id="action-copy-text" class="btn-copy-action">
+                        <i class="fas fa-copy"></i> Salin Teks Petunjuk
+                    </button>
+                    
+                    <div class="qris-image-frame">
+                        <img src="qris.jpg" alt="QRIS CODE">
+                    </div>
+
+                    <div class="total-box-render">
+                        <span>TOTAL NOMINAL TRANSFER</span>
+                        <h2 id="live-nominal-render">Rp 0</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div id="step-panel-3" class="page-step">
+                <div class="qris-card" style="padding: 40px 20px;">
+                    <i class="fas fa-check-circle" style="color: #38a169; font-size: 3.5rem; margin-bottom: 15px;"></i>
+                    <h2 style="color:#004d61; margin-bottom: 10px;">Terima Kasih Orang Baik!</h2>
+                    <p style="color:#4a5568; font-size:0.9rem; line-height:1.5;">Donasi Anda sangat berarti bagi perjuangan kesembuhan adik Zayn.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="bottom-action-nav">
+            <button id="action-system-share" class="btn-side-share-icon">
+                <i class="fas fa-share-alt"></i> <i class="fas fa-chevron-right" style="font-size:0.7rem; color:#a0aec0;"></i>
+            </button>
+            <button id="action-main-trigger" class="btn-main-submit">Donasi Sekarang</button>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let activeStep = 1;
+
+            const p1 = document.getElementById("step-panel-1");
+            const p2 = document.getElementById("step-panel-2");
+            const p3 = document.getElementById("step-panel-3");
+            
+            const btnMain = document.getElementById("action-main-trigger");
+            const btnShare = document.getElementById("action-system-share");
+            const btnCopy = document.getElementById("action-copy-text");
+            
+            const inputMoney = document.getElementById("input-nominal");
+            const renderMoney = document.getElementById("live-nominal-render");
+
+            // Fungsi Alur Perpindahan Halaman
+            btnMain.addEventListener("click", function() {
+                if (activeStep === 1) {
+                    const nominal = inputMoney.value || inputMoney.placeholder;
+                    if (!nominal || nominal < 10000) {
+                        alert("Silakan masukkan nominal donasi minimal Rp 10.000 ya.");
+                        return;
+                    }
+
+                    // Sinkronisasi nominal input ke box QRIS
+                    renderMoney.textContent = "Rp " + parseInt(nominal).toLocaleString('id-ID');
+
+                    // Masuk Halaman 2 (QRIS)
+                    p1.classList.remove("active");
+                    p2.classList.add("active");
+                    btnMain.textContent = "Konfirmasi Pembayaran";
+                    btnMain.classList.add("green-state");
+                    activeStep = 2;
+                    window.scrollTo(0, 0);
+
+                } else if (activeStep === 2) {
+                    // Masuk Halaman 3 (Sukses)
+                    p2.classList.remove("active");
+                    p3.classList.add("active");
+                    btnMain.textContent = "Selesai & Kembali";
+                    btnMain.classList.remove("green-state");
+                    activeStep = 3;
+                    window.scrollTo(0, 0);
+
+                } else if (activeStep === 3) {
+                    // Reset Form Form ke Semula
+                    inputMoney.value = "";
+                    document.getElementById("input-nama").value = "";
+                    document.getElementById("input-email").value = "";
+                    document.getElementById("input-wa").value = "";
+                    document.getElementById("input-doa").value = "";
+                    
+                    p3.classList.remove("active");
+                    p1.classList.add("active");
+                    btnMain.textContent = "Donasi Sekarang";
+                    activeStep = 1;
+                    window.scrollTo(0, 0);
+                }
+            });
+
+            // Fungsi Tombol Salin Teks Petunjuk
+            if (btnCopy) {
+                btnCopy.addEventListener("click", function() {
+                    navigator.clipboard.writeText("Silakan selesaikan pembayaran scan QRIS program donor Zayn sebesar " + renderMoney.textContent);
+                    alert("Teks petunjuk transfer berhasil disalin!");
+                });
+            }
+
+            // Fungsi Bagikan Pop-up Resmi Sistem HP
+            btnShare.addEventListener("click", async () => {
+                if (navigator.share) {
+                    try {
+                        await navigator.share({
+                            title: 'Napas Kecil Zayn',
+                            text: 'Sering Kejang dan Gagal Napas, Mari ulurkan tangan bantu perjuangan adik Zayn.',
+                            url: window.location.href
+                        });
+                    } catch (e) { }
+                } else {
+                    navigator.clipboard.writeText(window.location.href);
+                    alert("Link tautan donasi berhasil disalin ke memori HP!");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
