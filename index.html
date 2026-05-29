@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sering Kejang dan Gagal Napas, Zayn Bertahan dengan Gangguan Otak Lissencephaly</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333333;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Container Utama Desain Mobile */
+        .wrapper {
+            width: 100%;
+            max-width: 480px;
+            background-color: #ffffff;
+            min-height: 100vh;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            position: relative;
+            padding-bottom: 90px;
+        }
+
+        /* Navigasi Atas */
+        .nav-header {
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            border-bottom: 1px solid #f0f0f0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .back-link {
+            color: #333333;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Gambar Sampul Utama */
+        .main-cover {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Area Konten */
+        .content-body {
+            padding: 16px;
+        }
+
+        .main-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #222222;
+            line-height: 1.4;
+            margin-bottom: 16px;
+        }
+
+        /* Status Donasi & Progress Bar */
+        .donation-box {
+            margin-bottom: 20px;
+            background: #fafafa;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #f0f0f0;
+        }
+
+        .amount-raised {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0076ff;
+            display: inline-block;
+        }
+
+        .days-remaining {
+            float: right;
+            font-size: 13px;
+            color: #333333;
+        }
+
+        .days-remaining strong {
+            color: #222222;
+            font-weight: 700;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: #eee;
+            border-radius: 4px;
+            margin: 8px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 65.85%;
+            background-color: #0076ff;
+            border-radius: 4px;
+        }
+
+        .target-text {
+            font-size: 12px;
+            color: #666666;
+        }
+
+        /* Tombol Aksi */
+        .middle-actions {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .share-icon-btn {
+            width: 48px;
+            height: 48px;
+            background-color: #f0f2f5;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .share-icon-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: #555555;
+        }
+
+        .donate-main-btn {
+            flex: 1;
+            height: 48px;
+            background-color: #0076ff;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Teks Cerita Artikel */
+        .story-text {
+            font-size: 14px;
+            color: #444444;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .story-text p {
+            margin-bottom: 14px;
+        }
+
+        /* Gambar di Dalam Artikel */
+        .article-inline-img {
+            width: 100%;
+            border-radius: 8px;
+            margin: 12px 0;
+            display: block;
+        }
+
+        .img-caption {
+            font-size: 11px;
+            color: #888888;
+            text-align: center;
+            margin-top: -8px;
+            margin-bottom: 16px;
+        }
+
+        /* Bagian List Donatur */
+        .section-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #222222;
+            margin: 24px 0 12px 0;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        .donor-card {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            background-color: #ffffff;
+            border: 1px solid #f0f0f0;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+
+        .donor-avatar {
+            width: 40px;
+            height: 40px;
+            background-color: #e9ecef;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-right: 12px;
+            color: #888;
+        }
+
+        .donor-info {
+            flex: 1;
+        }
+
+        .donor-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: #333333;
+        }
+
+        .donor-time {
+            font-size: 11px;
+            color: #999999;
+        }
+
+        .donor-amount {
+            font-size: 13px;
+            color: #555555;
+            margin-top: 2px;
+        }
+
+        .donor-amount strong {
+            color: #222222;
+        }
+
+        .btn-load-more {
+            width: 100%;
+            padding: 12px;
+            background-color: #f8f9fa;
+            color: #0076ff;
+            border: 1px solid #eef0f2;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        /* Menu Melayang Bawah (Sticky Footer) */
+        .sticky-footer-bar {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 480px;
+            background-color: #ffffff;
+            box-shadow: 0 -3px 10px rgba(0,0,0,0.08);
+            padding: 12px 16px;
+            display: flex;
+            gap: 10px;
+            z-index: 999;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        
+        <!-- Navigasi Kembali -->
+        <div class="nav-header">
+            <a href="#" class="back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Kembali
+            </a>
+        </div>
+
+        <!-- Gambar Utama -->
+        <img src="https://akcdn.detik.net.id/ct-arsa/cover_seringkejangdangagalnapaszaynbertahandengangangguanotaklissencephaly_1764935189.webp?q=90&w=580" alt="Zayn" class="main-cover">
+
+        <!-- Konten Pembuka -->
+        <div class="content-body">
+            <h1 class="main-title">Sering Kejang dan Gagal Napas, Zayn Bertahan dengan Gangguan Otak Lissencephaly</h1>
+            
+            <!-- Box Data Donasi -->
+            <div class="donation-box">
+                <div class="amount-raised">Rp 19.755.500</div>
+                <div class="days-remaining"><strong>11</strong> Hari lagi</div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="target-text">Terkumpul dari Rp 30.000.000,-</div>
+            </div>
+
+            <!-- Tombol Berbagi & Donasi Tengah -->
+            <div class="middle-actions">
+                <button class="share-icon-btn" onclick="sharePage()" title="Bagikan">
+                    <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.15 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+                </button>
+                <a href="https://donasiindonesia.byethost13.com/donasi-app/" class="donate-main-btn">Donasi Sekarang</a>
+            </div>
+
+            <!-- Cerita Lengkap Donasi -->
+            <div class="story-text">
+                <p>Bertahan hidup dengan gangguan otak langka lissencephaly sungguh bukan hal mudah bagi balita 1 tahun Zayn Ellbarak Malik. Sang ibu Namira Maulidya Ningsih harus mondar-mandir kontrol ke Rumah Sakit Cipto Mangunkusumo (RSCM) dari rumahnya di Kampung Baru Babakan, Bojong Gede, Bogor hingga empat kali dalam seminggu.</p>
+                <p>Zayn yang lahir pada 6 Oktober 2024 awalnya terdiagnosa mengalami microcephaly. Lingkar kepala bungsu dari tiga bersaudara ini sangat kecil dibanding perkembangan tubuh dan usianya. Otak Zayn tidak bisa tumbuh dan membantunya mengembangkan berbagai kemampuan hingga bisa semakin mandiri.</p>
+                
+                <img src="https://akcdn.detik.net.id/community/media/visual/2025/12/05/zayn-dan-ibunya-1764909581389.jpeg?w=500" alt="Zayn dan Ibunya" class="article-inline-img">
+                <div class="img-caption">Foto: berbuatbaik.id</div>
+
+                <p>Namun microcephaly bukan satu-satunya yang menghambat tumbuh kembang Zayn. Hasil diagnosa RSCM menyatakan Zayn mengalami penyakit langka lissencephaly. Gangguan malformasi otak ini ditandai lapisan permukaan yang sangat halus. Dikutip dari arsip detikcom, beberapa dampak lissencephaly adalah sering kejang, gagal napas, kesulitan menelan.</p>
+                <p>Kondisi tersebut dialami Zayn ketika menginjak usia 2 bulan 2-3 minggu. Sebelumnya di usia 0-2 month, kondisi Zayn relatif baik tanpa kejang dan demam. Ibunda Zayn, Namira, sempat bertanya-tanya saat Zayn mengalami kejang dengan ujung kaki seperti melengkung. Tubuh kecil Zayn kaku, mata berkedip sambil gemeter, dan keluar air pipis.</p>
+                <p>"Di usia 2 bulan itu sehari bisa kejang sampai 8 kali. Saya bawa ke RSUD Cibinong sampai akhirnya dirujuk ke RSCM. Di rumah sakit ternyata 3/4 otak Zayn rusak, hanya sebagian kecil berfungsi. Di RSCM diagnosa gangguan otak langka lissencephaly yang dialami Zayn tegak," kata Namira.</p>
+                
+                <img src="https://akcdn.detik.net.id/community/media/visual/2025/12/05/zayn-dan-ibunya-1764909919276.png?w=500" alt="Kondisi Perawatan Zayn" class="article-inline-img">
+                <div class="img-caption">Foto: berbuatbaik.id</div>
+
+                <p>Besarnya usaha dan motivasi Namira demi kesehatan Zayn, akan berbuah manis dengan dukungan para Sahabat Baik. Donasi sekecil apapun akan berarti bagi perbaikan kondisi Zayn, yang sedang bertahan di tengah gempuran microcephaly dan lissencephaly.</p>
+            </div>
+
+            <!-- Daftar Riwayat Donatur -->
+            <h2 class="section-title">Donatur (100)</h2>
+            
+            <div class="donor-card">
+                <div class="donor-avatar">👤</div>
+                <div class="donor-info">
+                    <div class="donor-name">D********* T</div>
+                    <div class="donor-time">5 jam yang lalu</div>
+                    <div class="donor-amount">Donasi <strong>Rp 5.000</strong></div>
+                </div>
+            </div>
+
+            <div class="donor-card">
+                <div class="donor-avatar">👤</div>
+                <div class="donor-info">
+                    <div class="donor-name">Hamba Allah</div>
+                    <div class="donor-time">9 jam yang lalu</div>
+                    <div class="donor-amount">Donasi <strong>Rp 1.000.000</strong></div>
+                </div>
+            </div>
+
+            <div class="donor-card">
+                <div class="donor-avatar">👤</div>
+                <div class="donor-info">
+                    <div class="donor-name">Hamba Allah</div>
+                    <div class="donor-time">12 jam yang lalu</div>
+                    <div class="donor-amount">Donasi <strong>Rp 50.000</strong></div>
+                </div>
+            </div>
+
+            <div class="donor-card">
+                <div class="donor-avatar">👤</div>
+                <div class="donor-info">
+                    <div class="donor-name">Hamba Allah</div>
+                    <div class="donor-time">21 jam yang lalu</div>
+                    <div class="donor-amount">Donasi <strong>Rp 100.000</strong></div>
+                </div>
+            </div>
+
+            <div class="donor-card">
+                <div class="donor-avatar">👤</div>
+                <div class="donor-info">
+                    <div class="donor-name">D********* T</div>
+                    <div class="donor-time">1 hari yang lalu</div>
+                    <div class="donor-amount">Donasi <strong>Rp 15.000</strong></div>
+                </div>
+            </div>
+
+            <div class="btn-load-more">Lihat Lebih Banyak ▾</div>
+        </div>
+
+        <!-- Tombol Permanen Melayang di Layar Bawah (Sticky Footer) -->
+        <div class="sticky-footer-bar">
+            <button class="share-icon-btn" onclick="sharePage()" title="Bagikan">
+                <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.15 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+            </button>
+            <a href="https://donasiindonesia.byethost13.com/donasi-app/" class="donate-main-btn">Donasi Sekarang</a>
+        </div>
+
+    </div>
+
+    <script>
+        function sharePage() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Bantu Perjuangan Zayn',
+                    text: 'Mari ulurkan tangan membantu pengobatan Zayn melalui Berbuatbaik.',
+                    url: window.location.href
+                });
+            } else {
+                alert("Tautan berhasil disalin ke memori HP!");
+            }
+        }
+    </script>
+</body>
+</html>
