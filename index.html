@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sering Kejang dan Gagal Napas, Zayn Bertahan dengan Gangguan Otak Lissencephaly</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS PREMIUM CLONE 100% - PIXEL PERFECT DARI SCREENSHOT */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #2d3748;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 450px;
+            background-color: #ffffff;
+            min-height: 100vh;
+            position: relative;
+            padding-bottom: 80px; /* Jarak aman tombol melayang bawah */
+            box-shadow: 0 4px 25px rgba(0,0,0,0.05);
+        }
+
+        /* 1. HEADER VERCEL BAR ATAS */
+        .vercel-nav-header {
+            background-color: #004d5a;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .vercel-logo-brand {
+            color: #ffffff;
+            font-size: 1.15rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+
+        .vercel-search-box {
+            flex: 1;
+            position: relative;
+        }
+
+        .vercel-search-box input {
+            width: 100%;
+            background-color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 10px 6px 28px;
+            font-size: 0.85rem;
+            outline: none;
+        }
+
+        .vercel-search-box i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #a0aec0;
+            font-size: 0.75rem;
+        }
+
+        .vercel-right-icons {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #ffffff;
+            font-size: 1.1rem;
+        }
+
+        /* 2. BANNER HERO COVER DENGAN OVERLAY KUOTASI */
+        .banner-hero-box {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            background-image: url('827.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .banner-gradient-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 20%, rgba(0, 77, 90, 0.85) 100%);
+            padding: 24px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .quote-symbol {
+            font-size: 1.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1;
+        }
+
+        .quote-main-title {
+            color: #ffffff;
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+            margin-top: 5px;
+        }
+
+        .banner-meta-profile {
+            color: #ffffff;
+        }
+
+        .banner-meta-profile .profile-name {
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .banner-meta-profile .profile-desc {
+            font-size: 0.82rem;
+            opacity: 0.9;
+            line-height: 1.3;
+            margin-top: 2px;
+        }
+
+        .banner-meta-profile .profile-credit {
+            font-size: 0.65rem;
+            opacity: 0.6;
+            margin-top: 5px;
+        }
+
+        /* KONTEN UTAMA HALAMAN HOME */
+        .home-body-content {
+            padding: 20px 16px;
+        }
+
+        .campaign-main-headline {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #005a6f;
+            line-height: 1.35;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+
+        /* 3. CARD TRACKER PROGRES DONASI */
+        .donation-progress-card {
+            background-color: #0f2c4a; /* Biru gelap pekat sesuai screenshot asli */
+            border-radius: 8px;
+            padding: 14px 16px;
+            color: #ffffff;
+            margin-bottom: 25px;
+        }
+
+        .progress-meta-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .current-funds-text {
+            font-size: 1.45rem;
+            font-weight: 700;
+        }
+
+        .days-remaining-text {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 6px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .progress-bar-fill-toska {
+            width: 65%;
+            height: 100%;
+            background-color: #00b4b4; /* Toska terang meluncur */
+            border-radius: 10px;
+        }
+
+        .target-goal-caption {
+            font-size: 0.82rem;
+            opacity: 0.85;
+        }
+
+        /* 4. GRID DAFTAR DONATUR (DUA KOLOM) */
+        .donatur-header-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 14px;
+        }
+
+        .donatur-grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Dua kolom persis seperti screenshot */
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .donatur-card-item {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .donatur-avatar {
+            width: 36px;
+            height: 36px;
+            background-color: #cbd5e0;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .donatur-details-box {
+            overflow: hidden;
+        }
+
+        .donatur-profile-name {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #004d61;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .donatur-log-time {
+            font-size: 0.75rem;
+            color: #718096;
+            margin: 1px 0 4px 0;
+        }
+
+        .donatur-money-value {
+            font-size: 0.82rem;
+            color: #2d3748;
+        }
+
+        /* 5. FOOTER SOSIAL MEDIA */
+        .social-connect-footer {
+            text-align: center;
+            padding: 15px 0 30px 0;
+            border-top: 1px solid #edf2f7;
+        }
+
+        .social-connect-footer h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 12px;
+        }
+
+        .social-icons-row {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .social-icon-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            font-size: 1.1rem;
+            text-decoration: none;
+        }
+
+        /* ================= FIXED STICKY ACTION NAV BAR BAWAH ================= */
+        .bottom-sticky-bar-panel {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            max-width: 450px;
+            background-color: #ffffff;
+            border-top: 1px solid #e2e8f0;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 1000;
+        }
+
+        .btn-action-share-gray {
+            width: 52px;
+            height: 44px;
+            background-color: #e2e8f0;
+            border: none;
+            border-radius: 6px;
+            color: #4a5568;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .btn-action-trigger-blue {
+            flex: 1;
+            background-color: #007bff; /* Biru cerah sesuai screenshot pertama */
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            padding: 13px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        /* ================= POPUP MODAL OVERLAY (FORM + QRIS) ================= */
+        .popup-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end; /* Membuka panel pop-up meluncur dari bawah */
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .popup-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-scrollable-sheet {
+            width: 100%;
+            max-width: 450px;
+            background-color: #ffffff;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            padding: 24px 18px;
+            max-height: 85vh;
+            overflow-y: auto;
+            transform: translateY(100%);
+            transition: transform 0.3s ease-out;
+            position: relative;
+        }
+
+        .popup-modal-overlay.active .modal-scrollable-sheet {
+            transform: translateY(0);
+        }
+
+        .modal-dismiss-btn-x {
+            position: absolute;
+            top: 16px;
+            right: 18px;
+            font-size: 1.3rem;
+            color: #a0aec0;
+            cursor: pointer;
+        }
+
+        /* Gaya Form di Dalam Modal PopUp */
+        .modal-form-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-top: 14px;
+            margin-bottom: 6px;
+        }
+
+        .modal-form-input {
+            width: 100%;
+            background-color: #ffffff;
+            border: 1.5px solid #cbd5e0;
+            border-radius: 25px; /* Bulat lonjong kapsul sempurna */
+            padding: 10px 16px;
+            font-size: 0.95rem;
+            color: #1a202c;
+            outline: none;
+        }
+
+        /* Area Cetak QRIS Di Dalam Modal */
+        .modal-qris-area-box {
+            text-align: center;
+            margin-top: 20px;
+            border-top: 1px dashed #cbd5e0;
+            padding-top: 20px;
+        }
+
+        .modal-qris-caption-text {
+            font-size: 0.9rem;
+            color: #4a5568;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            padding: 0 10px;
+        }
+
+        .modal-qris-image-frame {
+            display: inline-block;
+            background: #ffffff;
+            padding: 10px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+
+        .modal-qris-image-frame img {
+            width: 210px;
+            height: 210px;
+            display: block;
+            object-fit: contain;
+        }
+
+        /* Tombol Download QRIS Oranye Cerah */
+        .btn-modal-download-orange {
+            width: 100%;
+            background-color: #ff9800;
+            color: #ffffff;
+            border: none;
+            border-radius: 25px;
+            padding: 12px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        /* Rincian Ringkasan Pembayaran Otomatis */
+        .modal-summary-invoice-card {
+            background-color: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .invoice-row-flex {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.88rem;
+            color: #718096;
+            margin-bottom: 6px;
+        }
+
+        .invoice-row-flex.grand-total-bold {
+            border-top: 1px dashed #cbd5e0;
+            margin-top: 8px;
+            padding-top: 8px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #2d3748;
+        }
+
+        /* Upload Bukti File */
+        .modal-upload-header-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 6px;
+            text-align: left;
+        }
+
+        .modal-file-picker-box {
+            border: 1.5px dashed #cbd5e0;
+            border-radius: 10px;
+            padding: 12px;
+            background-color: #f8fafc;
+            display: flex;
+            align-items: center;
+        }
+
+        .modal-file-picker-box input {
+            font-size: 0.85rem;
+            color: #718096;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <div class="vercel-nav-header">
+            <a href="#" class="vercel-logo-brand">
+                <i class="triangle-icon" style="border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 14px solid white; display: inline-block;"></i> Vercel
+            </a>
+            <div class="vercel-search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search for ceaturs">
+            </div>
+            <div class="vercel-right-icons">
+                <i class="fas fa-cog"></i>
+                <i class="fab fa-github"></i>
+            </div>
+        </div>
+
+        <div class="banner-hero-box">
+            <div class="banner-gradient-cover">
+                <div>
+                    <div class="quote-symbol"><i class="fas fa-quote-left"></i></div>
+                    <div class="quote-main-title">Napas Kecil Zayn<br>Yang Terus Berjuang</div>
+                </div>
+                <div class="banner-meta-profile">
+                    <div class="profile-name">ZAYN</div>
+                    <div class="desc" style="font-size:0.82rem; opacity:0.9;">Bayi Pengidap Gangguan Otak Lissencephaly<br>di Kab Bogor</div>
+                    <div class="profile-credit">Photo credit: Zaini e & Namira</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-body-content">
+            <h1 class="campaign-main-headline">Sering Kejang dan Gagal Napas, Zayn Bertahan dengan Gangguan Otak Lissencephaly</h1>
+            
+            <div class="donation-progress-card">
+                <div class="progress-meta-row">
+                    <span class="current-funds-text">Rp 19.755.500</span>
+                    <span class="days-remaining-text">11 Hari lagi</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill-toska"></div>
+                </div>
+                <div class="target-goal-caption">Terkumpul dari Rp 30.000.000,-</div>
+            </div>
+
+            <div class="donatur-header-title">Donatur (100)</div>
+            
+            <div class="donatur-grid-layout">
+                <div class="donatur-card-item">
+                    <div class="donatur-avatar"><i class="fas fa-user"></i></div>
+                    <div class="donatur-details-box">
+                        <div class="donatur-profile-name">D********* T</div>
+                        <div class="donatur-log-time">5 jam lalu</div>
+                        <div class="donatur-money-value">Donasi <strong>Rp 5.000</strong></div>
+                    </div>
+                </div>
+
+                <div class="donatur-card-item">
+                    <div class="donatur-avatar"><i class="fas fa-user"></i></div>
+                    <div class="donatur-details-box">
+                        <div class="donatur-profile-name">Hamba Allah</div>
+                        <div class="donatur-log-time">9 jam lalu</div>
+                        <div class="donatur-money-value">Donasi <strong>Rp 1.000.000</strong></div>
+                    </div>
+                </div>
+
+                <div class="donatur-card-item">
+                    <div class="donatur-avatar"><i class="fas fa-user"></i></div>
+                    <div class="donatur-details-box">
+                        <div class="donatur-profile-name">Hamba Allah</div>
+                        <div class="donatur-log-time">12 jam lalu</div>
+                        <div class="donatur-money-value">Donasi <strong>Rp 100.000</strong></div>
+                    </div>
+                </div>
+
+                <div class="donatur-card-item">
+                    <div class="donatur-avatar"><i class="fas fa-user"></i></div>
+                    <div class="donatur-details-box">
+                        <div class="donatur-profile-name">Hamba Allah</div>
+                        <div class="donatur-log-time">21 jam lalu</div>
+                        <div class="donatur-money-value">Donasi <strong>Rp 100.000</strong></div>
+                    </div>
+                </div>
+
+                <div class="donatur-card-item">
+                    <div class="donatur-avatar"><i class="fas fa-user"></i></div>
+                    <div class="donatur-details-box">
+                        <div class="donatur-profile-name">Hamba Allah</div>
+                        <div class="donatur-log-time">21 jam lalu</div>
+                        <div class="donatur-value" style="font-size:0.82rem;">Donasi <strong>Rp 100.000</strong></div>
+                    </div>
+                </div>
+
+                <div class="donatur-card-item">
+                    <div class="donatur-avatar"><i class="fas fa-user"></i></div>
+                    <div class="donatur-details-box">
+                        <div class="donatur-profile-name">Hamba Allah</div>
+                        <div class="donatur-log-time">21 jam lalu</div>
+                        <div class="donatur-money-value">Donasi <strong>Rp 100.000</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-connect-footer">
+                <h4>Connect With Us</h4>
+                <div class="social-icons-row">
+                    <a href="#" class="social-icon-circle" style="background-color: #3b5998;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon-circle" style="background-color: #1da1f2;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon-circle" style="background-color: #0077b5;"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="popup-modal-overlay" id="payment-modal-sheet">
+            <div class="modal-scrollable-sheet">
+                <span class="modal-dismiss-btn-x" id="btn-close-modal-x"><i class="fas fa-times"></i></span>
+                
+                <h3 style="color:#004d61; font-size:1.15rem; margin-bottom:15px; font-weight:700; text-align:center;">Lengkapi Data Donasi</h3>
+
+                <label class="modal-form-label">Nama</label>
+                <input type="text" id="form-in-name" class="modal-form-input" placeholder="Rehan">
+
+                <label class="modal-form-label">Email</label>
+                <input type="email" id="form-in-email" class="modal-form-input" placeholder="tiamoasl9@gmail.com">
+
+                <label class="modal-form-label">Nomor WhatsApp</label>
+                <input type="tel" id="form-in-wa" class="modal-form-input" placeholder="08123456789">
+
+                <label class="modal-form-label">Nominal Donasi (Rp)</label>
+                <input type="number" id="form-in-amount" class="modal-form-input" placeholder="100000">
+
+                <label class="modal-form-label">Pesan/Doa</label>
+                <input type="text" id="form-in-prayer" class="modal-form-input" placeholder="Tulis doa tulus Anda...">
+
+                <div class="modal-qris-area-box">
+                    <div class="modal-qris-caption-text">
+                        Scan QR untuk membayar Donasi <span id="live-bold-amt-render" style="font-weight:800; color:#008080;">Rp 100.000</span>, dan tebarkan kebaikanmu hari ini! ❤️
+                    </div>
+
+                    <div class="modal-qris-image-frame">
+                        <img src="qris.jpg" alt="QRIS CODE">
+                    </div>
+
+                    <button class="btn-modal-download-orange" id="btn-dl-qris">Download QRIS</button>
+
+                    <div class="modal-summary-invoice-card">
+                        <div class="invoice-row-flex">
+                            <span>Nama Donatur</span>
+                            <span id="invoice-render-name">Rehan</span>
+                        </div>
+                        <div class="invoice-row-flex">
+                            <span>Metode Pembayaran</span>
+                            <span>QRIS Otomatis</span>
+                        </div>
+                        <div class="invoice-row-flex grand-total-bold">
+                            <span>Total Pembayaran</span>
+                            <span id="invoice-render-total" style="color:#38a169;">Rp 100.000</span>
+                        </div>
+                    </div>
+
+                    <div class="modal-upload-header-title">Bukti Transfer (Wajib)</div>
+                    <div class="modal-file-picker-box">
+                        <input type="file" id="file-proof-img" accept="image/*">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-sticky-bar-panel">
+            <button id="btn-hp-system-share" class="btn-action-share-gray">
+                <i class="fas fa-share-alt"></i> <i class="fas fa-chevron-right" style="font-size:0.65rem; color:#a0aec0; margin-left:-2px;"></i>
+            </button>
+            <button id="btn-primary-action-trigger" class="btn-action-trigger-blue">Donasi Sekarang</button>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let pageCurrentState = 1; // 1: Home View, 2: Modal Form Aktif Terbuka
+
+            const modalSheet = document.getElementById("payment-modal-sheet");
+            const btnPrimary = document.getElementById("btn-primary-action-trigger");
+            const btnCloseX = document.getElementById("btn-close-modal-x");
+            const btnShare = document.getElementById("btn-hp-system-share");
+            const btnDownload = document.getElementById("btn-dl-qris");
+
+            const inName = document.getElementById("form-in-name");
+            const inAmount = document.getElementById("form-in-amount");
+            const fileProof = document.getElementById("file-proof-img");
+
+            const renderBoldAmt = document.getElementById("live-bold-amt-render");
+            const invName = document.getElementById("invoice-render-name");
+            const invTotal = document.getElementById("invoice-render-total");
+
+            // Fungsi Sinkronisasi Input Nominal Secara Real-time Saat Diketik
+            function updateInvoiceData() {
+                const nameVal = inName.value || "Rehan";
+                const amtVal = inAmount.value || 100000;
+                const formatted = "Rp " + parseInt(amtVal).toLocaleString('id-ID');
+
+                renderBoldAmt.textContent = formatted;
+                invName.textContent = nameVal;
+                invTotal.textContent = formatted;
+            }
+
+            inName.addEventListener("input", updateInvoiceData);
+            inAmount.addEventListener("input", updateInvoiceData);
+
+            // KLIK TOMBOL UTAMA ("DONASI SEKARANG" ATAU "KONFIRMASI PEMBAYARAN")
+            btnPrimary.addEventListener("click", function() {
+                if (pageCurrentState === 1) {
+                    // Jalankan Efek Animasi Membuka PopUp Modal dari Bawah
+                    modalSheet.classList.add("active");
+                    btnPrimary.textContent = "Konfirmasi Pembayaran";
+                    btnPrimary.style.backgroundColor = "#38a169"; // Ganti jadi hijau sukses saat konfirmasi
+                    pageCurrentState = 2;
+                    updateInvoiceData();
+
+                } else if (pageCurrentState === 2) {
+                    // Validasi Wajib Isi Apakah File Gambar Bukti Upload Sudah Dipilih
+                    if (fileProof.files.length === 0) {
+                        alert("Mohon masukkan/pilih file foto Bukti Transfer Anda terlebih dahulu min!");
+                        return;
+                    }
+
+                    // Tampilkan Alert Sukses Berhasil
+                    alert("Terima kasih banyak Orang Baik! Donasi Anda berhasil disimpan dan akan segera diverifikasi sistem.");
+                    
+                    // Reset dan Tutup Layar Layar Kembali Bersih
+                    modalSheet.classList.remove("active");
+                    location.reload();
+                }
+            });
+
+            // Klik Tombol Silang (X) untuk Menutup PopUp Modal
+            btnCloseX.addEventListener("click", function() {
+                modalSheet.classList.remove("active");
+                btnPrimary.textContent = "Donasi Sekarang";
+                btnPrimary.style.backgroundColor = "#007bff";
+                pageCurrentState = 1;
+            });
+
+            // Klik Tombol Unduh QRIS Oranye
+            btnDownload.addEventListener("click", function() {
+                alert("Gambar QRIS berhasil disimpan ke galeri perangkat HP Anda!");
+            });
+
+            // Fungsi Tombol Bagikan Pop-up Resmi HP
+            btnShare.addEventListener("click", async () => {
+                if (navigator.share) {
+                    try {
+                        await navigator.share({
+                            title: 'Napas Kecil Zayn',
+                            text: 'Sering Kejang dan Gagal Napas, mari ringankan beban adik Zayn.',
+                            url: window.location.href
+                        });
+                    } catch (e) { }
+                } else {
+                    navigator.clipboard.writeText(window.location.href);
+                    alert("Tautan link berhasil disalin!");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
