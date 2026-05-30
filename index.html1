@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sering Kejang dan Gagal Napas, Zayn Bertahan dengan Gangguan Otak Lissencephaly</title>
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://i.ibb.co.com/Wvzfdw2d/IMG-7406.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.container {
+    max-width: 650px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+    animation: fadeIn 0.6s ease;
+    position: relative;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+h2 { text-align: center; color: #00796b; margin-bottom: 20px; font-weight: 700; }
+label { font-weight: 600; display: block; margin-bottom: 6px; }
+input, select, textarea { width: 100%; padding: 12px; margin-bottom: 18px; border-radius: 10px; border: 1px solid #bbb; transition: .3s; font-size: 14px; }
+input:focus, select:focus, textarea:focus { border-color: #26a69a; box-shadow: 0 0 10px #26a69a70; }
+button { width: 100%; background: linear-gradient(135deg, #26a69a, #00796b); padding: 14px; color: #fff; border-radius: 12px; border: none; font-size: 16px; cursor: pointer; margin-top: 10px; transition: all 0.4s; }
+button:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 10px 25px rgba(0,0,0,.3);}
+.rincian, #qris, #kataMotivasi { margin-top: 15px; text-align: center; transition: all 0.6s ease; }
+.donatur-list { overflow: hidden; white-space: nowrap; margin-top: 30px; padding: 10px; background: rgba(0,0,0,0.05); border-radius: 12px; }
+.donatur-item { display: inline-block; margin-right: 40px; font-weight: 600; color: #00796b; transform: translateX(100%); animation: scrollDonatur 20s linear infinite; opacity:0; }
+@keyframes scrollDonatur {
+    0% { transform: translateX(100%); opacity:1; }
+    50% { opacity:1; }
+    100% { transform: translateX(-100%); opacity:0; }
+}
+.qris-img { width: 250px; height: 250px; border-radius:12px; box-shadow:0 8px 25px rgba(0,0,0,0.3); transition: all 0.5s ease; }
+.qris-img:hover { transform: scale(1.07) rotate(2deg); box-shadow:0 12px 30px rgba(0,0,0,0.35); }
+.download-btn { margin-top: 10px; background: linear-gradient(135deg,#ff9800,#f57c00); border:none; padding:10px 20px; border-radius:10px; cursor:pointer; color:#fff; font-weight:600; transition: all 0.4s; }
+.download-btn:hover { transform: scale(1.07); box-shadow:0 10px 25px rgba(0,0,0,0.35);}
+.kataMotivasi { font-style: italic; color:#555; margin-top: 10px; opacity:0; transform:translateY(10px); transition: all 0.6s; }
+.kataMotivasi.show { opacity:1; transform:translateY(0); }
+
+/* Terima Kasih Overlay */
+.thanks-overlay {
+    position: absolute;
+    top:0; left:0; width:100%; height:100%;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.8s ease;
+}
+.thanks-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+.thanks-overlay h1 { font-size: 2rem; color: #ffca28; margin-bottom: 15px; animation: pop 0.6s ease; }
+.thanks-overlay p { font-size: 1.2rem; margin-bottom: 20px; }
+.thanks-overlay button { background: linear-gradient(135deg,#ff9800,#f57c00); padding:12px 25px; font-size:16px; border-radius:12px; border:none; cursor:pointer; transition: all 0.5s; }
+.thanks-overlay button:hover { transform: scale(1.1); box-shadow:0 10px 25px rgba(0,0,0,0.35);}
+@keyframes pop { 0% { transform: scale(0.5); opacity:0 } 100% { transform: scale(1); opacity:1 } }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Sering Kejang dan Gagal Napas, Zayn Bertahan dengan Gangguan Otak Lissencephaly</h2>
+
+    <form id="donasiForm" enctype="multipart/form-data" method="POST" action="kirim_donasi.php">
+
+        <label>Nama</label>
+        <input type="text" name="nama" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Nomor WhatsApp</label>
+        <input type="text" name="wa" required>
+
+        <label>Nominal Donasi (Rp)</label>
+        <input type="number" name="nominal" id="nominal" required>
+
+        <label>Pesan/Doa</label>
+        <textarea name="doa" rows="3"></textarea>
+
+        <div class="rincian">
+            <strong>Rincian Pembayaran:</strong>
+            <p id="total">Total: Rp 0,-</p>
+        </div>
+
+        <div id="qris"></div>
+        <div id="kataMotivasi" class="kataMotivasi"><em>Setiap donasi Anda membawa senyum untuk mereka yang membutuhkan 💖</em></div>
+
+        <label>Bukti Transfer</label>
+        <input type="file" name="bukti" accept="image/*" required>
+
+        <button type="submit">DONASI SEKARANG</button>
+    </form>
+
+    <div id="response" style="margin-top:20px;"></div>
+
+    <div class="donatur-list" id="donaturList"></div>
+
+    <!-- Terima Kasih Overlay -->
+    <div class="thanks-overlay" id="thanksOverlay">
+        <h1>Terima Kasih!</h1>
+        <p>Donasi Anda telah berhasil dikirim. 💖<br>Semoga kebaikan Anda membawa manfaat untuk banyak orang.</p>
+        <button id="backBtn">Kembali ke Form</button>
+    </div>
+</div>
+
+<script>
+let totalTimeout;
+document.getElementById("nominal").addEventListener("input", function() {
+    clearTimeout(totalTimeout);
+    const nominal = Number(this.value);
+    totalTimeout = setTimeout(() => {
+        document.getElementById("total").textContent = "Total Donasi: Rp " + nominal.toLocaleString('id-ID') + ",-";
+        const kata = document.getElementById("kataMotivasi");
+        kata.innerHTML = `<em>Scan QR untuk membayar Donasi Rp ${nominal.toLocaleString('id-ID')},- dan tebarkan kebaikanmu hari ini! 💖</em>`;
+        kata.classList.add('show');
+    }, 400);
+
+    if(nominal > 0){
+        fetch(`qris.php?amount=${nominal}`)
+        .then(res => res.json())
+        .then(data => {
+            if(data.status === "success" && data.qris_base64){
+                document.getElementById("qris").innerHTML = `
+                    <img src="data:image/png;base64,${data.qris_base64}" alt="QRIS Donasi" class="qris-img" id="qrisImg">
+                    <br><button type="button" class="download-btn" id="downloadBtn">Download QRIS</button>
+                `;
+                document.getElementById('downloadBtn').onclick = () => {
+                    const link = document.createElement('a');
+                    link.href = `data:image/png;base64,${data.qris_base64}`;
+                    link.download = `QRIS_Donasi_${nominal}.png`;
+                    link.click();
+                };
+            } else {
+                document.getElementById("qris").innerHTML = `<p style="color:red;">${data.message}</p>`;
+            }
+        });
+    } else {
+        document.getElementById("qris").innerHTML = '';
+        const kata = document.getElementById("kataMotivasi");
+        kata.innerHTML = `<em>Setiap donasi Anda membawa senyum untuk mereka yang membutuhkan 💖</em>`;
+        kata.classList.remove('show');
+    }
+});
+
+// Submit form via fetch
+document.getElementById("donasiForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const formData = new FormData(this);
+    fetch('donasi.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(res => res.text())
+    .then(msg => {
+        this.reset();
+        document.getElementById("qris").innerHTML = '';
+        document.getElementById("total").textContent = "Total: Rp 0,-";
+        const kata = document.getElementById("kataMotivasi");
+        kata.innerHTML = `<em>Setiap donasi Anda membawa senyum untuk mereka yang membutuhkan 💖</em>`;
+        kata.classList.remove('show');
+        loadDonatur();
+
+        // Tampilkan overlay Terima Kasih
+        document.getElementById("thanksOverlay").classList.add('show');
+    })
+    .catch(err => {
+        document.getElementById("response").innerHTML = `<p style="color:red;">Terjadi kesalahan: ${err}</p>`;
+    });
+});
+
+// Tutup overlay Terima Kasih
+document.getElementById("backBtn").addEventListener("click", function(){
+    document.getElementById("thanksOverlay").classList.remove('show');
+});
+
+// Load donatur terakhir
+function loadDonatur(){
+    fetch('donatur.json?' + Date.now())
+    .then(res => res.json())
+    .then(data => {
+        const last10 = data.slice(-10).reverse();
+        const container = document.getElementById('donaturList');
+        container.innerHTML = '';
+        last10.forEach((d,i) => {
+            const div = document.createElement('div');
+            div.className = 'donatur-item';
+            div.style.animationDelay = `${i*0.2}s`;
+            div.innerHTML = `${d.nama} → Rp ${Number(d.nominal).toLocaleString('id-ID')},- `;
+            container.appendChild(div);
+        });
+    });
+}
+
+// Inisialisasi
+loadDonatur();
+setInterval(loadDonatur, 60000);
+</script>
+
+</body>
+</html>
